@@ -1,0 +1,14 @@
+type Login {
+  user: String!
+  passwd: String!
+}
+
+input LoginInput {
+  user: String!
+  passwd: String!
+}
+
+
+type Mutation {
+  login(data: LoginInput!): Usuario
+}

@@ -1,0 +1,33 @@
+type Revenda {
+  id: ID!
+  dsrevenda: String
+  cnpj: String
+  isexterno: String
+  municipio: String
+  estado: String
+  hashcode: String
+  dtalteracao: String
+  isativo: String
+}
+
+input RevendaInput {
+  dsrevenda: String
+  cnpj: String
+  isexterno: String
+  municipio: String
+  estado: String
+  hashcode: String
+  dtalteracao: String
+  isativo: String
+}
+
+type Query {
+  revendas: [Revenda!]!
+  revenda(id: ID!): Revenda!
+}
+
+type Mutation {
+  createRevenda(data: RevendaInput!): Boolean
+  updateRevenda(id: ID, data: RevendaInput!): Boolean
+  deleteRevenda(id: ID!): Boolean
+}

@@ -1,0 +1,48 @@
+type Produto {
+  iderp: ID!
+  idrevenda: ID!
+  idlote: ID!
+  dsitem: String
+  saldo: String
+  dtfabricacao: String
+  dtvencimento: String
+  cdbarras: String
+  idgrupo: String
+  vlminimo: String
+  vlproduto: String
+  hashuser: String
+  dtalteracao: String
+  isativo: String
+  dsrevenda: String
+}
+
+input ProdutoInput {
+  dsitem: String
+  saldo: String
+  dtfabricacao: String
+  dtvencimento: String
+  cdbarras: String
+  idgrupo: String
+  vlminimo: String
+  vlproduto: String
+  hashuser: String
+  dtalteracao: String
+  isativo: String
+}
+
+input ProdutoId {
+  iderp: ID!
+  idrevenda: ID!
+  idlote: ID!
+}
+
+type Query {
+  produtos: [Produto!]!
+  produto(id: ProdutoId!): Produto!
+}
+
+type Mutation {
+  createProduto(data: ProdutoInput!): Boolean
+  updateProduto(id: ProdutoId!, data: ProdutoInput!): Boolean
+  deleteProduto(id: ProdutoId!): Boolean
+}

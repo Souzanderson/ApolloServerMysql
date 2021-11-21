@@ -1,0 +1,50 @@
+type Usuario {
+  id: ID!
+  dsusuario: String!
+  user: String!
+  cpfcnpj: String!
+  dsorganizacao: String
+  fone: String
+  cidade: String
+  estado: String
+  isconsultor: String
+  iscomprar: String
+  isvender: String
+  idrevenda: String
+  ismaster: String
+  hashcode: String
+  dtalteracao: String
+  isprecadastro: String
+  isativo: String
+  dsrevenda: String
+}
+
+input UsuarioInput {
+  dsusuario: String!
+  user: String!
+  cpfcnpj: String!
+  dsorganizacao: String!
+  fone: String!
+  cidade: String!
+  estado: String!
+  isconsultor: String!
+  iscomprar: String!
+  isvender: String!
+  idrevenda: String!
+  ismaster: String!
+  hashcode: String!
+  dtalteracao: String!
+  isprecadastro: String!
+  isativo: String!
+}
+
+type Query {
+  usuarios: [Usuario!]!
+  usuario(id: ID!): Usuario!
+}
+
+type Mutation {
+  createUsuario(data: UsuarioInput!): Boolean
+  updateUsuario(id: ID, data: UsuarioInput!): Boolean
+  deleteUsuario(id: ID!): Boolean
+}
